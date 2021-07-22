@@ -15,4 +15,12 @@ public class Bread {
 		TimeUnit.SECONDS.sleep(10);
 		isBaked = true;
 	}
+
+	@SneakyThrows
+	public void bakeIt(int duration) {
+		TimeUnit.SECONDS.sleep(duration);
+		if(duration >= 10) {
+			isBaked = false;
+		}
+	}
 }
