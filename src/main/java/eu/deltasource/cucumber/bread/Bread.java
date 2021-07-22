@@ -2,9 +2,11 @@ package eu.deltasource.cucumber.bread;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class Bread {
 
 	@Getter
@@ -20,7 +22,10 @@ public class Bread {
 	public void bakeIt(int duration) {
 		TimeUnit.SECONDS.sleep(duration);
 		if(duration >= 10) {
-			isBaked = false;
+			log.info("bread has baked completely");
+			isBaked = true;
+		} else {
+			log.warn("bread is not baked yet!");
 		}
 	}
 }

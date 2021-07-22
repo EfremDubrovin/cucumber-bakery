@@ -52,7 +52,7 @@ public class BakeBreadStepDefinitions {
 		assertThat(bread.isBaked(), equalTo(true));
 	}
 
-	@When("we bake the dough for (.*) minutes")
+	@When("we bake the dough for {int} minutes")
 	public void weBakeTheDoughForBakeDurationMinutes(int duration) {
 		bakery.bake(bread, duration);
 	}
